@@ -114,15 +114,62 @@ body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-wei
 .full-fn{font-family:var(--f-scr);font-size:.7rem;font-style:italic;color:rgba(245,240,232,.35);margin-top:.9rem;display:block;}
 
 /* GASTRONOMY GRID */
-.gastro-wrap{background:var(--white);padding:5.5rem 2rem;}
-.gastro-inner{max-width:1080px;margin:0 auto;}
+.gastro-wrap{background:var(--ink);padding:5.5rem 2rem;}
+.gastro-inner{max-width:1100px;margin:0 auto;}
 .gastro-header{text-align:center;margin-bottom:4rem;}
-.gastro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
-.g-card{background:var(--cream);padding:2.25rem 1.75rem;}
-.g-date{font-family:var(--f-dis);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;display:block;}
-.g-title{font-family:var(--f-dis);font-size:1rem;font-weight:300;color:var(--ink);margin-bottom:.4rem;line-height:1.25;letter-spacing:.04em;}
-.g-chefs{font-family:var(--f-scr);font-size:.85rem;font-style:italic;color:var(--muted);margin-bottom:.6rem;}
-.g-place{font-family:var(--f-dis);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);}
+.gastro-header .band-kicker{color:rgba(245,240,232,.45);}
+.gastro-header .band-title{color:#F5F0E8;}
+.gastro-header .band-italic{color:rgba(245,240,232,.8);}
+.gastro-header .band-body{color:rgba(245,240,232,.5);}
+.gastro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.g-card{
+  position:relative;height:520px;overflow:hidden;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.g-card-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:transform .7s ease;
+}
+.g-card:hover .g-card-bg{transform:scale(1.06);}
+.g-card-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(var(--ov),.95) 0%,rgba(var(--ov),.55) 50%,rgba(var(--ov),.1) 100%);
+}
+.g-card-body{position:relative;z-index:2;padding:2rem 1.75rem;}
+.g-date-badge{
+  display:inline-block;
+  font-family:var(--f-dis);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid rgba(245,240,232,.35);color:rgba(245,240,232,.7);
+  padding:.25rem .7rem;margin-bottom:1rem;
+}
+.g-title{
+  font-family:var(--f-dis);font-size:1.1rem;font-weight:300;letter-spacing:.04em;
+  color:#F5F0E8;margin-bottom:.2rem;line-height:1.2;
+}
+.g-script{
+  font-family:var(--f-scr);font-size:1rem;font-style:italic;
+  color:rgba(245,240,232,.75);display:block;margin-bottom:.85rem;
+}
+.g-chefs{
+  font-family:var(--f-scr);font-size:.8rem;font-style:italic;
+  color:rgba(245,240,232,.55);margin-bottom:1.1rem;
+}
+.g-place{
+  font-family:var(--f-dis);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,240,232,.4);margin-bottom:1.25rem;display:block;
+}
+.g-seats{
+  display:inline-block;
+  font-family:var(--f-dis);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(245,240,232,.12);border:1px solid rgba(245,240,232,.25);
+  color:rgba(245,240,232,.65);padding:.22rem .65rem;margin-bottom:1.1rem;
+}
+.g-btn{
+  display:inline-block;font-family:var(--f-dis);font-size:.54rem;letter-spacing:.16em;
+  text-transform:uppercase;border:1px solid rgba(245,240,232,.5);color:#F5F0E8;
+  padding:.5rem 1.1rem;text-decoration:none;transition:all .25s;
+}
+.g-btn:hover{background:rgba(245,240,232,.1);}
 
 /* FOOTER */
 .site-footer{background:var(--footer);border-top:1px solid var(--border);padding:4.5rem 2rem 2rem;}
@@ -148,6 +195,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-wei
   .ev-img{height:320px;}
   .ev-text,.ev-section.rev .ev-text{padding:3.5rem 2rem;}
   .gastro-grid{grid-template-columns:1fr 1fr;}
+  .g-card{height:420px;}
   .footer-inner{grid-template-columns:1fr;gap:2.5rem;}
   .full-dark-content,.full-dark.right .full-dark-content{padding:4rem 2rem;margin-left:0;}
 }
@@ -344,34 +392,63 @@ body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-wei
       <p class="band-body">Four nights, four restaurants, four chef collaborations. The gastronomic season closes with a collective celebration at Pra&ccedil;a das Rosas.</p>
     </div>
     <div class="gastro-grid">
+
       <div class="g-card">
-        <span class="g-date">4 September &nbsp;|&nbsp; Friday</span>
-        <h3 class="g-title">Coral Atlantic Encounters</h3>
-        <p class="g-chefs">Chef Diogo Pereira &times; Rita Magro</p>
-        <span class="g-place">Coral Restaurant</span>
-        <div style="margin-top:1.5rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.52rem;padding:.5rem .9rem;">Reserve</a></div>
+        <div class="g-card-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2024/03/VLR_Coral_Carabineiro-crudo-e-sua_cabeca.jpg');"></div>
+        <div class="g-card-ov"></div>
+        <div class="g-card-body">
+          <span class="g-date-badge">4 September &nbsp;|&nbsp; Friday</span>
+          <h3 class="g-title">Coral</h3>
+          <span class="g-script">Atlantic Encounters</span>
+          <p class="g-chefs">Diogo Pereira &times; Rita Magro</p>
+          <span class="g-place">Coral &Eacute;den do Mar</span>
+          <span class="g-seats">Limited seats</span><br>
+          <a href="https://vilalara.com/en/gastronomy/" class="g-btn" target="_blank">Reserve</a>
+        </div>
       </div>
+
       <div class="g-card">
-        <span class="g-date">5 September &nbsp;|&nbsp; Saturday</span>
-        <h3 class="g-title">Fire &amp; Origins</h3>
-        <p class="g-chefs">Telmo Pires &times; Alexandre Silva</p>
-        <span class="g-place">Ra&iacute;zes Restaurant</span>
-        <div style="margin-top:1.5rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.52rem;padding:.5rem .9rem;">Reserve</a></div>
+        <div class="g-card-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2024/05/Vilalara_Restaurant_Al-fresco-dining_Raizes--scaled.webp');background-position:center 40%;"></div>
+        <div class="g-card-ov"></div>
+        <div class="g-card-body">
+          <span class="g-date-badge">5 September &nbsp;|&nbsp; Saturday</span>
+          <h3 class="g-title">Fire</h3>
+          <span class="g-script">&amp; Origins</span>
+          <p class="g-chefs">Telmo Pires &times; Alexandre Silva</p>
+          <span class="g-place">Ra&iacute;zes Horta da Terra</span>
+          <span class="g-seats">Limited seats</span><br>
+          <a href="https://vilalara.com/en/gastronomy/" class="g-btn" target="_blank">Reserve</a>
+        </div>
       </div>
+
       <div class="g-card">
-        <span class="g-date">7 September &nbsp;|&nbsp; Sunday</span>
-        <h3 class="g-title">Mediterranean Encounters</h3>
-        <p class="g-chefs">Ricardo &times; Stefano Bulla</p>
-        <span class="g-place">Trattoria Pantaleone</span>
-        <div style="margin-top:1.5rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.52rem;padding:.5rem .9rem;">Reserve</a></div>
+        <div class="g-card-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2024/03/VLR_Trattoria_Ravioli-de-trufa.jpg');"></div>
+        <div class="g-card-ov"></div>
+        <div class="g-card-body">
+          <span class="g-date-badge">7 September &nbsp;|&nbsp; Sunday</span>
+          <h3 class="g-title">Mediterranean</h3>
+          <span class="g-script">Encounters</span>
+          <p class="g-chefs">Ricardo &times; Stefano Bulla</p>
+          <span class="g-place">Trattoria Pantaleone</span>
+          <span class="g-seats">Limited seats</span><br>
+          <a href="https://vilalara.com/en/gastronomy/" class="g-btn" target="_blank">Reserve</a>
+        </div>
       </div>
+
       <div class="g-card">
-        <span class="g-date">8 September &nbsp;|&nbsp; Monday</span>
-        <h3 class="g-title">Closing Celebration</h3>
-        <p class="g-chefs">Diogo &nbsp;|&nbsp; Telmo &nbsp;|&nbsp; Ricardo &nbsp;|&nbsp; Louis Anjos</p>
-        <span class="g-place">Pra&ccedil;a das Rosas</span>
-        <div style="margin-top:1.5rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.52rem;padding:.5rem .9rem;">Reserve</a></div>
+        <div class="g-card-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2025/11/occasions_celebrations.webp');background-position:center 35%;"></div>
+        <div class="g-card-ov"></div>
+        <div class="g-card-body">
+          <span class="g-date-badge">8 September &nbsp;|&nbsp; Monday</span>
+          <h3 class="g-title">Closing</h3>
+          <span class="g-script">Celebration</span>
+          <p class="g-chefs">Diogo &nbsp;|&nbsp; Telmo &nbsp;|&nbsp; Ricardo &nbsp;|&nbsp; Louis Anjos</p>
+          <span class="g-place">Pra&ccedil;a das Rosas</span>
+          <span class="g-seats">Last seats available</span><br>
+          <a href="https://vilalara.com/en/gastronomy/" class="g-btn" target="_blank">Reserve</a>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
