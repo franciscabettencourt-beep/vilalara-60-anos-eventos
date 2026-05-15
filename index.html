@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Season Highlights 2026 — Vilalara Grand Hotel Algarve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F5F0E8;
+  --cream2:#EDE7DB;
+  --ink:#1A1108;
+  --ink2:#3A3020;
+  --muted:#8A7E6E;
+  --faint:#B8AC9A;
+  --gold:#B8913A;
+  --border:#DDD5C2;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(245,240,232,0.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:80px;
+}
+.nav-lang{font-size:0.65rem;font-weight:500;letter-spacing:0.08em;color:var(--muted);text-decoration:none;}
+.nav-lang:hover{color:var(--ink);}
+.nav-logo{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;
+  text-decoration:none;
+}
+.nav-logo img{height:38px;width:auto;}
+.nav-actions{display:flex;align-items:center;gap:2rem;}
+.nav-links-inline{display:flex;align-items:center;gap:2rem;}
+.nav-link-item{font-size:0.62rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink2);text-decoration:none;transition:color .2s;}
+.nav-link-item:hover{color:var(--gold);}
+.nav-book{
+  font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--white);
+  padding:0.55rem 1.4rem;text-decoration:none;transition:background .2s;
+}
+.nav-book:hover{background:var(--ink2);}
+.nav-bottom{
+  display:flex;align-items:center;justify-content:center;gap:2.5rem;
+  border-top:1px solid var(--border);padding:0.55rem 2.5rem;
+}
+.nav-bottom-link{font-size:0.62rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink2);text-decoration:none;transition:color .2s;}
+.nav-bottom-link:hover,.nav-bottom-link.active{color:var(--gold);}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero{
+  position:relative;height:100vh;min-height:600px;
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:5rem;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://vilalara.com/wp-content/uploads/2025/07/VLR_beach_lounge-1024x772.webp');
+  background-size:cover;background-position:center 40%;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,6,.75) 0%,rgba(20,14,6,.3) 50%,rgba(20,14,6,.1) 100%);}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 2rem;}
+.hero-eyebrow{font-size:0.65rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,.7);margin-bottom:1.25rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,6rem);font-weight:300;line-height:1.05;color:#F5F0E8;margin-bottom:0.5rem;}
+.hero-title em{font-style:italic;font-weight:300;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.4rem);font-style:italic;color:rgba(245,240,232,.7);margin-bottom:2rem;}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-outline-light{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(245,240,232,.6);color:#F5F0E8;padding:0.75rem 2rem;text-decoration:none;transition:all .25s;}
+.btn-outline-light:hover{background:rgba(245,240,232,.1);border-color:#F5F0E8;}
+.btn-solid-light{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;background:#F5F0E8;color:var(--ink);padding:0.75rem 2rem;text-decoration:none;transition:background .2s;}
+.btn-solid-light:hover{background:#fff;}
+
+/* ── COUNTDOWN BAR ───────────────────────────────────────────── */
+.countdown-bar{background:var(--cream2);border-bottom:1px solid var(--border);padding:2rem 2rem;text-align:center;}
+.cd-kicker{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
+.cd-event{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;color:var(--ink);margin-bottom:1.2rem;}
+.cd-units{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.cd-unit{text-align:center;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;color:var(--ink);display:block;line-height:1;}
+.cd-label{font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);margin-top:0.2rem;}
+.cd-sep{font-size:1.5rem;color:var(--border);align-self:flex-start;padding-top:0.4rem;}
+.btn-dark{display:inline-block;font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;background:var(--ink);color:var(--white);padding:0.65rem 1.75rem;text-decoration:none;transition:background .2s;}
+.btn-dark:hover{background:var(--ink2);}
+
+/* ── INTRO BAND ──────────────────────────────────────────────── */
+.intro-band{max-width:760px;margin:0 auto;padding:5rem 2rem;text-align:center;}
+.band-kicker{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;}
+.band-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:300;line-height:1.2;color:var(--ink);margin-bottom:1.25rem;}
+.band-title em{font-style:italic;}
+.band-body{font-size:0.92rem;color:var(--muted);line-height:1.85;max-width:580px;margin:0 auto;}
+
+/* ── DIVIDER ─────────────────────────────────────────────────── */
+.divider{border:none;border-top:1px solid var(--border);margin:0;}
+
+/* ── EVENT SECTION ───────────────────────────────────────────── */
+/* alternating: text-left/image-right and image-left/text-right */
+.event-section{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
+.event-section.reverse{direction:rtl;}
+.event-section.reverse>*{direction:ltr;}
+.ev-text{display:flex;flex-direction:column;justify-content:center;padding:4rem 4rem 4rem 5rem;}
+.event-section.reverse .ev-text{padding:4rem 5rem 4rem 4rem;}
+.ev-img{overflow:hidden;position:relative;}
+.ev-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.ev-img:hover img{transform:scale(1.03);}
+.ev-kicker{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.ev-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--ink);margin-bottom:0.5rem;}
+.ev-title em{font-style:italic;}
+.ev-title-em{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;font-style:italic;color:var(--ink);margin-bottom:1.25rem;display:block;}
+.ev-date-tag{font-size:0.62rem;font-weight:500;letter-spacing:0.1em;color:var(--gold);margin-bottom:1rem;display:block;}
+.ev-desc{font-size:0.88rem;color:var(--muted);line-height:1.85;margin-bottom:1.75rem;max-width:400px;}
+.btn-more{display:inline-block;font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);padding:0.65rem 1.5rem;text-decoration:none;transition:all .2s;}
+.btn-more:hover{background:var(--ink);color:var(--white);}
+.btn-more-gold{display:inline-block;font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:0.65rem 1.5rem;text-decoration:none;transition:all .2s;}
+.btn-more-gold:hover{background:var(--gold);color:var(--white);}
+.urgency-note{font-size:0.65rem;color:var(--muted);font-style:italic;margin-top:0.75rem;}
+
+/* ── FULL-WIDTH SECTION (Eclipse / Thalasso) ─────────────────── */
+.full-section{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;}
+.full-section-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+.full-section-overlay{position:absolute;inset:0;}
+.full-section-content{position:relative;z-index:2;max-width:620px;padding:5rem 5rem;}
+.full-section.align-right .full-section-content{margin-left:auto;padding:5rem 5rem;}
+
+/* ── GASTRO WEEK ────────────────────────────────────────────── */
+.gastro-section{background:var(--white);padding:5rem 2rem;}
+.gastro-inner{max-width:1100px;margin:0 auto;}
+.gastro-header{text-align:center;margin-bottom:3.5rem;}
+.gastro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.gastro-card{background:var(--cream);padding:2rem 1.5rem;}
+.gastro-card-date{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block;}
+.gastro-card-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:0.5rem;line-height:1.25;}
+.gastro-card-chefs{font-size:0.78rem;color:var(--muted);font-style:italic;margin-bottom:0.75rem;}
+.gastro-card-place{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);}
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.site-footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(245,240,232,.6);}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-logo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;}
+.footer-logo-wrap img{height:40px;filter:brightness(0) invert(1);opacity:0.85;}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:rgba(245,240,232,.5);}
+.footer-col-title{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:1rem;}
+.footer-col-links{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col-links a{font-size:0.8rem;color:rgba(245,240,232,.6);text-decoration:none;transition:color .2s;}
+.footer-col-links a:hover{color:#F5F0E8;}
+.footer-bottom{border-top:1px solid rgba(245,240,232,.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1100px;margin:0 auto;}
+.footer-copy{font-size:0.65rem;color:rgba(245,240,232,.3);}
+.footer-links-row{display:flex;gap:2rem;}
+.footer-links-row a{font-size:0.65rem;color:rgba(245,240,232,.4);text-decoration:none;letter-spacing:0.08em;transition:color .2s;}
+.footer-links-row a:hover{color:rgba(245,240,232,.8);}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media(max-width:900px){
+  .nav-bottom{display:none;}
+  .nav-links-inline{display:none;}
+  .event-section{grid-template-columns:1fr;min-height:auto;}
+  .event-section.reverse{direction:ltr;}
+  .ev-img{height:300px;}
+  .ev-text,.event-section.reverse .ev-text{padding:3rem 1.5rem;}
+  .gastro-grid{grid-template-columns:1fr 1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .full-section-content,.full-section.align-right .full-section-content{padding:4rem 2rem;margin-left:0;}
+}
+@media(max-width:600px){
+  .nav-top{padding:0 1.25rem;height:64px;}
+  .nav-logo img{height:28px;}
+  .gastro-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-top">
+    <a href="https://vilalara.com/en/" class="nav-lang">EN &#9662;</a>
+    <a href="https://vilalara.com/en/" class="nav-logo">
+      <img src="https://vilalara.com/wp-content/uploads/2026/04/cropped-cropped-LOGO-DEFINTIVO-1-scaled-1.png" alt="Vilalara Grand Hotel Algarve">
+    </a>
+    <div class="nav-actions">
+      <div class="nav-links-inline">
+        <a href="https://vilalara.com/en/gastronomy/" class="nav-link-item">Gastronomy</a>
+        <a href="https://vilalara.com/en/wellness/" class="nav-link-item">Wellness</a>
+        <a href="https://vilalara.com/en/experiences/" class="nav-link-item">Experiences</a>
+      </div>
+      <a href="https://vilalara.com/en/book/" class="nav-book" target="_blank">Book</a>
+    </div>
+  </div>
+  <div class="nav-bottom">
+    <a href="https://vilalara.com/en/our-heritage/" class="nav-bottom-link">Our Heritage</a>
+    <a href="https://vilalara.com/en/suites-residences/" class="nav-bottom-link">Suites &amp; Residences</a>
+    <a href="https://vilalara.com/en/gastronomy/" class="nav-bottom-link">Gastronomy</a>
+    <a href="https://vilalara.com/en/wellness/" class="nav-bottom-link">Wellness</a>
+    <a href="https://vilalara.com/en/clubs/" class="nav-bottom-link">Clubs</a>
+    <a href="https://vilalara.com/en/experiences/" class="nav-bottom-link">Experiences</a>
+    <a href="https://vilalara.com/en/occasions/" class="nav-bottom-link">Occasions</a>
+    <a href="#" class="nav-bottom-link active">Season Highlights</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Vilalara Grand Hotel Algarve &middot; Est. 1966</p>
+    <h1 class="hero-title">60 Anos<br><em>of Vilalara</em></h1>
+    <p class="hero-sub">A season marked by gastronomy, wellness, culture &amp; legacy</p>
+    <div class="hero-cta">
+      <a href="#events" class="btn-outline-light">Discover the Events</a>
+      <a href="https://vilalara.com/en/book/" class="btn-solid-light" target="_blank">Reserve Your Stay</a>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  <p class="cd-kicker">Next event</p>
+  <p class="cd-event" id="cd-name">60 Years on the Cliffs</p>
+  <div class="cd-units">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-label">days</span></div>
+    <span class="cd-sep">&middot;</span>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-label">hours</span></div>
+    <span class="cd-sep">&middot;</span>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-label">minutes</span></div>
+    <span class="cd-sep">&middot;</span>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-label">seconds</span></div>
+  </div>
+  <a href="https://vilalara.com/en/gastronomy/" class="btn-dark" target="_blank">Secure Your Place</a>
+</div>
+
+<!-- INTRO BAND -->
+<div class="intro-band" id="events">
+  <p class="band-kicker">Season Highlights 2026</p>
+  <h2 class="band-title">A Season <em>of Celebration</em></h2>
+  <p class="band-body">Throughout 2026, Vilalara Grand Hotel marks six decades with a curated programme of unique events &mdash; chef&rsquo;s dinners, memorable nights, an immersive wellness week, and much more, all set against the breathtaking cliffs of the Algarve.</p>
+</div>
+<hr class="divider">
+
+<!-- EVENT 1: 60 Years on the Cliffs (23 Mai) -->
+<div class="event-section">
+  <div class="ev-text">
+    <span class="ev-kicker">Gastronomy &middot; 23 May 2026</span>
+    <h2 class="ev-title">60 Years <em>on the Cliffs</em></h2>
+    <span class="ev-date-tag">Opening event of the anniversary season</span>
+    <p class="ev-desc">An intimate dinner inspired by the elegance and atmosphere of the 1960s, on the cliffs where Vilalara&rsquo;s story began. With the presence of Lara Beir&atilde;o da Veiga, granddaughter of founder George Ansley, each course is accompanied by visual storytelling and photography celebrating the hotel&rsquo;s history.</p>
+    <div><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank">Reserve Your Table</a></div>
+    <p class="urgency-note">Limited seats &middot; Gaivotas Restaurant</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2024/06/VLR_resort_topview-1024x683.jpg" alt="60 Years on the Cliffs" loading="lazy">
+  </div>
+</div>
+<hr class="divider">
+
+<!-- EVENT 2: Vilalara x Vila Lisa (17 Jun) -->
+<div class="event-section reverse">
+  <div class="ev-text">
+    <span class="ev-kicker">Chronicle Dinners &middot; 17 June 2026</span>
+    <h2 class="ev-title">Vilalara <em>&times; Vila Lisa</em></h2>
+    <span class="ev-date-tag">Two spaces with soul and age</span>
+    <p class="ev-desc">A special edition of the Chronicle Dinners uniting two spaces shaped by soul, identity and the passage of time. Vilalara and Vila Lisa come together through a shared philosophy of hospitality &mdash; places with character, memory and authenticity.</p>
+    <div><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank">Reserve Your Table</a></div>
+    <p class="urgency-note">Tasting menu &middot; Legacy &middot; Identity</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2025/09/8P8A7093-Edit-scaled.webp" alt="Chronicle Dinners Vilalara x Vila Lisa" loading="lazy">
+  </div>
+</div>
+<hr class="divider">
+
+<!-- EVENT 3: Santos Populares (27 Jun) -->
+<div class="event-section">
+  <div class="ev-text">
+    <span class="ev-kicker">Social &middot; 27 June 2026</span>
+    <h2 class="ev-title">Santos Populares <em>at Vilalara</em></h2>
+    <span class="ev-date-tag">An elegant celebration of Portuguese culture</span>
+    <p class="ev-desc">An elegant and contemporary interpretation of the traditional Santos Populares festivals. Portuguese flavours, live music, gastronomic stations and moments of conviviality in a relaxed yet sophisticated atmosphere, crafted for guests, residents and invited partners.</p>
+    <div><a href="https://vilalara.com/en/book/" class="btn-more" target="_blank">Reserve Your Stay</a></div>
+    <p class="urgency-note">Guests &amp; partners &middot; Vilalara cliffs</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2024/06/VLR_terracepool-1024x683.jpg" alt="Santos Populares at Vilalara" loading="lazy">
+  </div>
+</div>
+<hr class="divider">
+
+<!-- EVENT 4: Coral x Kabuki (11 Jul) -->
+<div class="event-section reverse">
+  <div class="ev-text">
+    <span class="ev-kicker">Chronicle Dinners &middot; 11 July 2026</span>
+    <h2 class="ev-title">Coral <em>&times; Kabuki</em><br>Under the Pines</h2>
+    <span class="ev-date-tag">Atlantic meets Japan</span>
+    <p class="ev-desc">A singular encounter between Atlantic identity and Japanese precision. Beneath Vilalara&rsquo;s pines, Coral welcomes Kabuki for an immersive gastronomic experience exploring texture, seasonality and sensory contrast through a carefully crafted tasting menu.</p>
+    <div><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank">Reserve Your Table</a></div>
+    <p class="urgency-note">Coral Restaurant &middot; Chef collaboration &middot; Fine dining</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2024/03/VLR_Coral_Carabineiro-crudo-e-sua_cabeca.jpg" alt="Coral x Kabuki" loading="lazy">
+  </div>
+</div>
+<hr class="divider">
+
+<!-- EVENT 5: White Night (22 Jul) -->
+<div class="event-section">
+  <div class="ev-text">
+    <span class="ev-kicker">Guest Event &middot; 22 July 2026</span>
+    <h2 class="ev-title">White Night <em>by the Cliffs</em></h2>
+    <span class="ev-date-tag">An elegant summer celebration for Vilalara guests</span>
+    <p class="ev-desc">White attire, music, cocktails and carefully curated moments unfold on the cliffs in an atmosphere designed to celebrate the rhythm of summer by the sea. Light, luminous and timeless.</p>
+    <div><a href="https://vilalara.com/en/book/" class="btn-more" target="_blank">Reserve Your Stay</a></div>
+    <p class="urgency-note">Exclusive to hotel guests &middot; Included in stay</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2025/07/Pool-A-Costa-1024x683.webp" alt="White Night by the Cliffs" loading="lazy">
+  </div>
+</div>
+<hr class="divider">
+
+<!-- EVENT 6: Eclipse (12 Ago) — FULL WIDTH DARK -->
+<div class="full-section" style="min-height:580px;">
+  <div class="full-section-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2025/07/VLR_beach_lounge-1024x772.webp');background-position:center 30%;"></div>
+  <div class="full-section-overlay" style="background:linear-gradient(to right,rgba(15,10,4,.88) 40%,rgba(15,10,4,.4) 100%);"></div>
+  <div class="full-section-content">
+    <span style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,232,.55);margin-bottom:1rem;display:block;">Signature Event &middot; 12 August 2026</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#F5F0E8;line-height:1.15;margin-bottom:0.5rem;">The Last Eclipse</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;color:rgba(245,240,232,.75);margin-bottom:1.5rem;">of Our Lifetime</p>
+    <p style="font-size:.88rem;color:rgba(245,240,232,.65);line-height:1.85;max-width:420px;margin-bottom:2rem;">A unique celebration beneath one of the rarest natural phenomena of our generation. On the Vilalara cliffs, the night combines astronomy, music, gastronomy and immersive experiences under the solar eclipse &mdash; a symbolic moment suspended between time, nature and memory.</p>
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <a href="https://vilalara.com/en/book/" style="display:inline-block;font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(245,240,232,.6);color:#F5F0E8;padding:.65rem 1.5rem;text-decoration:none;" target="_blank">Reserve Your Stay</a>
+      <span style="font-size:.65rem;color:rgba(245,240,232,.45);font-style:italic;">Once in a lifetime &middot; Very limited places</span>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+
+<!-- GASTRO WEEK -->
+<div class="gastro-section">
+  <div class="gastro-inner">
+    <div class="gastro-header">
+      <p class="band-kicker" style="margin-bottom:1rem;">Gastronomy Month &middot; September 2026</p>
+      <h2 class="band-title">A Week <em>of Flavours</em></h2>
+      <p class="band-body" style="margin-bottom:2.5rem;">Four nights, four restaurants, four chef collaborations. A gastronomic season closing with a collective celebration at Pra&ccedil;a das Rosas.</p>
+    </div>
+    <div class="gastro-grid">
+      <div class="gastro-card">
+        <span class="gastro-card-date">4 September &middot; Friday</span>
+        <h3 class="gastro-card-title">Coral Atlantic Encounters</h3>
+        <p class="gastro-card-chefs">Chef Diogo Pereira &times; Rita Magro</p>
+        <span class="gastro-card-place">Coral Restaurant</span>
+        <div style="margin-top:1.25rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.56rem;">Reserve</a></div>
+      </div>
+      <div class="gastro-card">
+        <span class="gastro-card-date">5 September &middot; Saturday</span>
+        <h3 class="gastro-card-title">Fire &amp; Origins</h3>
+        <p class="gastro-card-chefs">Telmo Pires &times; Alexandre Silva</p>
+        <span class="gastro-card-place">Ra&iacute;zes Restaurant</span>
+        <div style="margin-top:1.25rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.56rem;">Reserve</a></div>
+      </div>
+      <div class="gastro-card">
+        <span class="gastro-card-date">7 September &middot; Sunday</span>
+        <h3 class="gastro-card-title">Mediterranean Encounters</h3>
+        <p class="gastro-card-chefs">Ricardo &times; Stefano Bulla</p>
+        <span class="gastro-card-place">Trattoria Pantaleone</span>
+        <div style="margin-top:1.25rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.56rem;">Reserve</a></div>
+      </div>
+      <div class="gastro-card">
+        <span class="gastro-card-date">8 September &middot; Monday</span>
+        <h3 class="gastro-card-title">Closing Celebration</h3>
+        <p class="gastro-card-chefs">Diogo + Telmo + Ricardo + Louis Anjos</p>
+        <span class="gastro-card-place">Pra&ccedil;a das Rosas</span>
+        <div style="margin-top:1.25rem;"><a href="https://vilalara.com/en/gastronomy/" class="btn-more" target="_blank" style="font-size:.56rem;">Reserve</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+
+<!-- THALASSO LEGACY WEEK — FULL WIDTH LIGHT -->
+<div class="full-section" style="min-height:580px;">
+  <div class="full-section-bg" style="background-image:url('https://vilalara.com/wp-content/uploads/2024/07/VLR_yoga_cliff_homepage.jpg');background-position:center 25%;"></div>
+  <div class="full-section-overlay" style="background:linear-gradient(to left,rgba(15,10,4,.88) 40%,rgba(15,10,4,.35) 100%);"></div>
+  <div class="full-section-content" style="margin-left:auto;padding:5rem 5rem;">
+    <span style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,232,.55);margin-bottom:1rem;display:block;">Wellness &middot; 21&ndash;28 September 2026</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#F5F0E8;line-height:1.15;margin-bottom:0.5rem;">Thalasso Therapy</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;color:rgba(245,240,232,.75);margin-bottom:1.5rem;">Legacy Week</p>
+    <p style="font-size:.88rem;color:rgba(245,240,232,.65);line-height:1.85;max-width:420px;margin-bottom:2rem;">A week dedicated to Vilalara&rsquo;s wellness legacy and its historic connection to thalassotherapy. Special residencies, exclusive treatments and wellbeing rituals designed to reconnect with balance, longevity and the original wellness philosophy that has defined Vilalara for decades.</p>
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <a href="https://vilalara.com/en/wellness/" style="display:inline-block;font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(245,240,232,.6);color:#F5F0E8;padding:.65rem 1.5rem;text-decoration:none;" target="_blank">Reserve Wellness Programme</a>
+      <span style="font-size:.65rem;color:rgba(245,240,232,.45);font-style:italic;">7 nights &middot; 60 years of healing &middot; Very limited</span>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+
+<!-- LEGACY CELEBRATION -->
+<div class="event-section">
+  <div class="ev-text">
+    <span class="ev-kicker">Institutional Event &middot; 8 October 2026</span>
+    <h2 class="ev-title">Vilalara 60 Years &mdash;<br><em>Legacy Celebration</em></h2>
+    <span class="ev-date-tag">Official closing of the anniversary season</span>
+    <p class="ev-desc">An elegant evening dedicated to celebrating six decades of history, hospitality and legacy, bringing together owners, strategic partners, tourism bodies and institutional figures connected to the history and future of Vilalara.</p>
+    <div><a href="https://vilalara.com/en/" class="btn-more" target="_blank">More Information</a></div>
+    <p class="urgency-note">By invitation &middot; Vilalara Grand Hotel</p>
+  </div>
+  <div class="ev-img">
+    <img src="https://vilalara.com/wp-content/uploads/2024/05/Vilalara_Restaurant_Al-fresco-dining_Raizes--scaled.webp" alt="Legacy Celebration" loading="lazy">
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <img src="https://vilalara.com/wp-content/uploads/2026/04/cropped-cropped-LOGO-DEFINTIVO-1-scaled-1.png" alt="Vilalara">
+      <p class="footer-tagline">Est. 1966 &middot; Algarve, Portugal<br>60 Anos de Excel&ecirc;ncia</p>
+    </div>
+    <div>
+      <p class="footer-col-title">The Hotel</p>
+      <ul class="footer-col-links">
+        <li><a href="https://vilalara.com/en/our-heritage/">Our Heritage</a></li>
+        <li><a href="https://vilalara.com/en/suites-residences/">Suites &amp; Residences</a></li>
+        <li><a href="https://vilalara.com/en/wellness/">Wellness &amp; Spa</a></li>
+        <li><a href="https://vilalara.com/en/experiences/">Experiences</a></li>
+        <li><a href="https://vilalara.com/en/occasions/">Occasions</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Gastronomy</p>
+      <ul class="footer-col-links">
+        <li><a href="https://vilalara.com/en/restaurants/coral-restaurant/">Coral &Eacute;den do Mar</a></li>
+        <li><a href="https://vilalara.com/en/restaurants/a-costa/">A-Costa Mar e Brasas</a></li>
+        <li><a href="https://vilalara.com/en/restaurants/trattoria-pantaleone/">Trattoria Pantaleone</a></li>
+        <li><a href="https://vilalara.com/en/restaurants/raizes/">Ra&iacute;zes Horta da Terra</a></li>
+        <li><a href="https://vilalara.com/en/restaurants/gaivotas/">Gaivotas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 Vilalara Grand Hotel Algarve &middot; All rights reserved</p>
+    <div class="footer-links-row">
+      <a href="https://vilalara.com/en/contacts/">Contacts</a>
+      <a href="https://vilalara.com/en/book/" target="_blank">Book Now</a>
+      <a href="https://vilalara.com/en/">vilalara.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const evts=[
+  {date:new Date('2026-05-23'),name:'60 Years on the Cliffs'},
+  {date:new Date('2026-06-17'),name:'Vilalara × Vila Lisa'},
+  {date:new Date('2026-06-27'),name:'Santos Populares at Vilalara'},
+  {date:new Date('2026-07-11'),name:'Coral × Kabuki Under the Pines'},
+  {date:new Date('2026-07-22'),name:'White Night by the Cliffs'},
+  {date:new Date('2026-08-12'),name:'The Last Eclipse of Our Lifetime'},
+  {date:new Date('2026-09-04'),name:'Coral Atlantic Encounters'},
+  {date:new Date('2026-09-21'),name:'Thalasso Therapy Legacy Week'},
+  {date:new Date('2026-10-08'),name:'Legacy Celebration'},
+];
+function tick(){
+  const now=new Date();
+  const next=evts.find(e=>e.date>now)||evts[evts.length-1];
+  const diff=next.date-now;
+  if(diff<=0){tick();return;}
+  document.getElementById('cd-name').textContent=next.name;
+  document.getElementById('cd-d').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
